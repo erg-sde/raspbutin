@@ -7,10 +7,21 @@ name: raspbutin
 shortName: raspbutin
 displayName: Raspbutin
 
-events:
-- globalEvent
+config:
+  wakeword:
+    wake_word: MATRIX
+    channel: 0
+    lm_path: 7365.lm
+    dic_path: 7365.dic
 
 services:
   faceDemo:
     engine: detection
-    type: face 
+    type: face
+  voiceDemo:
+    wakeword: matrix
+    engine: voice
+    phrases:
+      - shine blue
+      - shine orange
+      - beep

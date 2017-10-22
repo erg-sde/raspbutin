@@ -1,0 +1,55 @@
+Language model created by QuickLM on Sun Oct 22 00:29:12 EDT 2017
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 10 sentences and 7 words
+
+\data\
+ngram 1=7
+ngram 2=13
+ngram 3=12
+
+\1-grams:
+-0.8573 </s> -0.3010
+-0.8573 <s> -0.1919
+-1.8573 BEEP -0.2361
+-1.3802 BLUE -0.2361
+-1.2553 MATRIX -0.1996
+-1.3802 ORANGE -0.2361
+-1.1584 SHINE -0.1919
+
+\2-grams:
+-1.3010 <s> BEEP 0.0000
+-1.3010 <s> BLUE 0.0000
+-0.6990 <s> MATRIX 0.0000
+-1.3010 <s> ORANGE 0.0000
+-0.8239 <s> SHINE 0.0000
+-0.3010 BEEP </s> -0.3010
+-0.3010 BLUE </s> -0.3010
+-0.6021 MATRIX </s> -0.3010
+-0.6021 MATRIX SHINE -0.0792
+-0.3010 ORANGE </s> -0.3010
+-1.0000 SHINE </s> -0.3010
+-0.6990 SHINE BLUE 0.0000
+-0.6990 SHINE ORANGE 0.0000
+
+\3-grams:
+-0.3010 <s> BEEP </s>
+-0.3010 <s> BLUE </s>
+-0.6021 <s> MATRIX </s>
+-0.6021 <s> MATRIX SHINE
+-0.3010 <s> ORANGE </s>
+-0.7782 <s> SHINE </s>
+-0.7782 <s> SHINE BLUE
+-0.7782 <s> SHINE ORANGE
+-0.6021 MATRIX SHINE BLUE
+-0.6021 MATRIX SHINE ORANGE
+-0.3010 SHINE BLUE </s>
+-0.3010 SHINE ORANGE </s>
+
+\end\
