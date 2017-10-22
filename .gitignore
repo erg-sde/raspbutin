@@ -1,0 +1,6 @@
+./cert.pem
+./key_private.pem
+./7365.dic
+./7365.lm
+./node_modules
+
