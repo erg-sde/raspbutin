@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-matrix.led( 'yellow').render();
-=======
 /* jshint maxparams: false */
 
 let util = require('util'), exec = require('child_process').exec
@@ -179,4 +176,3 @@ matrix.service('voice').listen('matrix', function(phrase){
     console.log(test_func());
   }
 })
->>>>>>> 71dc6019310912b0b6f7d3946a513672446ca285

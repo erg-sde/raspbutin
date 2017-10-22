@@ -6,8 +6,6 @@ keywords: ''
 name: raspbutin
 shortName: raspbutin
 displayName: Raspbutin
-<<<<<<< HEAD
-=======
 
 config:
   wakeword:
@@ -27,4 +25,3 @@ services:
       - shine blue
       - shine orange
       - beep
->>>>>>> 71dc6019310912b0b6f7d3946a513672446ca285
