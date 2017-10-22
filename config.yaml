@@ -6,11 +6,3 @@ keywords: ''
 name: raspbutin
 shortName: raspbutin
 displayName: Raspbutin
-
-events:
-- globalEvent
-
-services:
-  faceDemo:
-    engine: detection
-    type: face 
