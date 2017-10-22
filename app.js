@@ -145,7 +145,7 @@ const test_func = function() {
             var resourcePath = 'v1/locator';
             visaAPIClient.doMutualAuthRequest(baseUri + resourcePath, locatorRequest, 'POST', {},
             function(err, response) {
-              console.log(response);
+              say.speak('one moment please');
             });
         }
     call();
@@ -160,7 +160,7 @@ matrix.service('face').start().then(function(data) {
   }, 2500);
 });
 
-matrix.service('voice').listen('matrix', function(phrase){
+matrix.service('voice').listen('matrix', function(phrase) {
   console.log(phrase);
   let puts = function(error, stdout, stderr) { console.log(stdout) }
   var detail = phrase.split(' ')[1];
@@ -175,4 +175,5 @@ matrix.service('voice').listen('matrix', function(phrase){
     say.speak(cmd);
     console.log(test_func());
   }
-})
+});
+

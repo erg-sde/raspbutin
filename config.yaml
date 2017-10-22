@@ -22,6 +22,11 @@ services:
     wakeword: matrix
     engine: voice
     phrases:
+      - i'm hungry
+      - get to aloha
+      - aloha cafe
+      - where is there to eat nearby
+      - where can i get a quick bite
       - shine blue
       - shine orange
       - beep
