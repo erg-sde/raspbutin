@@ -1,0 +1,16 @@
+# do not touch this line
+configVersion: 2
+
+description: Iot App
+keywords: ''
+name: raspbutin
+shortName: raspbutin
+displayName: Raspbutin
+
+events:
+- globalEvent
+
+services:
+  faceDemo:
+    engine: detection
+    type: face 
