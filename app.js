@@ -1,8 +1,6 @@
 /* jshint maxparams: false */
 
-let util = require('util'), exec = require('child_process').exec
-  say = require('say');
-let locationName = '';
+let say = require('say'), locationName = '';
 
 var request = require('request');
 var config = {
@@ -149,7 +147,7 @@ const test_func = function() {
             visaAPIClient.doMutualAuthRequest(baseUri + resourcePath, locatorRequest, 'POST', {},
             function(err, response, body) {
 
-            });
+          });
         }
     call();
 }
@@ -165,18 +163,20 @@ matrix.service('face').start().then(function(data) {
 });
 
 matrix.service('voice').listen('matrix', function(phrase) {
-  let light = matrix.led('blue').render();
+  let angle = 0;
+  setInterval(function() {
+    light = matrix.led({color: 'blue', arc: angle, start: 0}).render();
+    angle += 10;
+  }, 100);
   var detail = phrase.split(' ')[((phrase.split(' ')).length - 1)];
   var cmd = phrase.split(' ')[0];
   if ( cmd === 'shine') {
     matrix.led({color: detail, angle: 0}).render();
-    say.speak(cmd + detail);
-  } else if (cmd === 'turn') {
+  } else if (cmd === 'turn' || detail === 'off') {
     matrix.led('black').render();
-    say.speak(cmd + detail);
-  } else if (detail === 'hungry' || detail === 'food') {
+  } else if (cmd === 'where' || detail === 'hungry' || detail === 'food') {
     matrix.led('black').render();
-    test_func();
-    say.speak("Why don't you try the " + locationName, 'slt_arctic_cg');
+    let test_resp = test_func();
+    say.speak("Why don't you try the " + locationName);
   }
 });
