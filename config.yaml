@@ -6,3 +6,25 @@ keywords: ''
 name: raspbutin
 shortName: raspbutin
 displayName: Raspbutin
+<<<<<<< HEAD
+=======
+
+config:
+  wakeword:
+    wake_word: MATRIX
+    channel: 0
+    lm_path: 7365.lm
+    dic_path: 7365.dic
+
+services:
+  faceDemo:
+    engine: detection
+    type: face
+  voiceDemo:
+    wakeword: matrix
+    engine: voice
+    phrases:
+      - shine blue
+      - shine orange
+      - beep
+>>>>>>> 71dc6019310912b0b6f7d3946a513672446ca285
