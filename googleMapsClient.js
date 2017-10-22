@@ -5,8 +5,10 @@ class GoogleMapClient {
     this.request = require('request');
   };
 
-  requestPlaceId(){
+  requestPlaceId(query){
 
+    'https://maps.googleapis.com/maps/api/place/nearbysearch/json?query='+ query +
+    'key='+ this.key
   };
 
   requestDirections(){
