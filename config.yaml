@@ -7,12 +7,8 @@ name: raspbutin
 shortName: raspbutin
 displayName: Raspbutin
 
-config:
-  wakeword:
-    wake_word: MATRIX
-    channel: 0
-    lm_path: 7365.lm
-    dic_path: 7365.dic
+events:
+  - globalEvent
 
 services:
   faceDemo:
@@ -22,7 +18,8 @@ services:
     wakeword: matrix
     engine: voice
     phrases:
-      - i'm hungry
+      - find food
+      - i am hungry
       - get to aloha
       - aloha cafe
       - where is there to eat nearby
@@ -30,3 +27,5 @@ services:
       - shine blue
       - shine orange
       - beep
+      - am hungry
+      - where can i get some food

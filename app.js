@@ -2,6 +2,7 @@
 
 let util = require('util'), exec = require('child_process').exec
   say = require('say');
+let locationName = '';
 
 var request = require('request');
 var config = {
@@ -25,6 +26,7 @@ let logRequest = function(requestBody, path) {
         console.log(item + ": " + response.headers[item]);
       }
       console.log("Body: "+ JSON.stringify(JSON.parse(body),null,4));
+      locationName = (JSON.parse(body)).merchantLocatorServiceResponse.response[0].responseValues.visaMerchantName;
     },
     getBasicAuthHeader = function(userId, password) {
       return 'Basic ' + new Buffer(userId + ':' + password).toString('base64');
@@ -39,6 +41,7 @@ let logRequest = function(requestBody, path) {
       var xPayToken = 'xv2:' + timestamp + ':' + hashString;
       return xPayToken;
     };
+
 
 class VisaAPIClient {
   constructor() {
@@ -123,7 +126,7 @@ const test_func = function() {
             "requestMessageId": "VCO_GMR_001"
         },
         "searchAttrList": {
-            "merchantName": "ALOHA CAFE",
+            "merchantName": locationName = "ALOHA CAFE",
             "merchantCountryCode": "840",
             "latitude": "34.047616",
             "longitude": "-118.239079",
@@ -144,8 +147,8 @@ const test_func = function() {
             var baseUri = 'merchantlocator/';
             var resourcePath = 'v1/locator';
             visaAPIClient.doMutualAuthRequest(baseUri + resourcePath, locatorRequest, 'POST', {},
-            function(err, response) {
-              say.speak('one moment please');
+            function(err, response, body) {
+
             });
         }
     call();
@@ -153,27 +156,27 @@ const test_func = function() {
 
 
 matrix.service('face').start().then(function(data) {
-  console.log(data);
-  matrix.led('blue').render();
+  say.speak('How can I help you today');
+  matrix.led('blue').render(function(){
+  });
   setTimeout(function(){
     matrix.led('black').render();
   }, 2500);
 });
 
 matrix.service('voice').listen('matrix', function(phrase) {
-  console.log(phrase);
-  let puts = function(error, stdout, stderr) { console.log(stdout) }
-  var detail = phrase.split(' ')[1];
+  let light = matrix.led('blue').render();
+  var detail = phrase.split(' ')[((phrase.split(' ')).length - 1)];
   var cmd = phrase.split(' ')[0];
-  if ( cmd === 'shine'){
+  if ( cmd === 'shine') {
     matrix.led({color: detail, angle: 0}).render();
     say.speak(cmd + detail);
-  } else if (cmd === 'turn'){
+  } else if (cmd === 'turn') {
     matrix.led('black').render();
     say.speak(cmd + detail);
-  } else if (cmd === 'beep'){
-    say.speak(cmd);
-    console.log(test_func());
+  } else if (detail === 'hungry' || detail === 'food') {
+    matrix.led('black').render();
+    test_func();
+    say.speak("Why don't you try the " + locationName, 'slt_arctic_cg');
   }
 });
-

@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cpu-stats": "^1.0.0"
+    "cpu-stats": "^1.0.0",
+    "jquery": "^3.2.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }
