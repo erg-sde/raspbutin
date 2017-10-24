@@ -4,6 +4,7 @@ A simple app that uses face detection or a wake word to prompt the user to make 
 
 
 ### Requirements:
+- Matrix Creator Unit
 - Raspberry PI3 with the Matrix Creator Libraries Installed
 - The Matrix CLI
 - Say.js Node Package
