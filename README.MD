@@ -1,8 +1,12 @@
-This is your app folder. Please only change app.js and config.yaml.
 
-Do not modify index.js.
+A simple app that uses face detection or a wake word to prompt the user to make a voice request. Upon receiving a request for food, such as "where can I find a quick bite", it makes ani API call to the Visa Merchant Locator API and returns the nearest merchant, in this case the sandboxed response, The Aloha Cafe.
 
-You may add packages via `npm`, they will be installed when the application is deployed to a device. 
+
+Requirements:
+Raspberry PI3 with the Matrix Creator Libraries Installed
+The Matrix CLI
+Say.js Node Package
+
 
 ## Developer Documentation
 
